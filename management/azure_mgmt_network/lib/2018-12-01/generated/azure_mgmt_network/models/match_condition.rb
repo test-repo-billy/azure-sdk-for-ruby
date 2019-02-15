@@ -12,13 +12,13 @@ module Azure::Network::Mgmt::V2018_12_01
 
       include MsRestAzure
 
-      # @return [Array<MatchVariable1>] List of match variables
+      # @return [Array<MatchVariable>] List of match variables
       attr_accessor :match_variables
 
-      # @return [Operator] Describes operator to be matched. Possible values
-      # include: 'IPMatch', 'Equal', 'Contains', 'LessThan', 'GreaterThan',
-      # 'LessThanOrEqual', 'GreaterThanOrEqual', 'BeginsWith', 'EndsWith',
-      # 'Regex'
+      # @return [WebApplicationFirewallOperator] Describes operator to be
+      # matched. Possible values include: 'IPMatch', 'Equal', 'Contains',
+      # 'LessThan', 'GreaterThan', 'LessThanOrEqual', 'GreaterThanOrEqual',
+      # 'BeginsWith', 'EndsWith', 'Regex'
       attr_accessor :operator
 
       # @return [Boolean] Describes if this is negate condition or not
@@ -27,7 +27,7 @@ module Azure::Network::Mgmt::V2018_12_01
       # @return [Array<String>] Match value
       attr_accessor :match_values
 
-      # @return [Array<Transform>] List of transforms
+      # @return [Array<WebApplicationFirewallTransform>] List of transforms
       attr_accessor :transforms
 
 
@@ -50,10 +50,10 @@ module Azure::Network::Mgmt::V2018_12_01
                   name: 'Sequence',
                   element: {
                       required: false,
-                      serialized_name: 'MatchVariable1ElementType',
+                      serialized_name: 'MatchVariableElementType',
                       type: {
                         name: 'Composite',
-                        class_name: 'MatchVariable1'
+                        class_name: 'MatchVariable'
                       }
                   }
                 }
@@ -93,7 +93,7 @@ module Azure::Network::Mgmt::V2018_12_01
                   name: 'Sequence',
                   element: {
                       required: false,
-                      serialized_name: 'TransformElementType',
+                      serialized_name: 'WebApplicationFirewallTransformElementType',
                       type: {
                         name: 'String'
                       }

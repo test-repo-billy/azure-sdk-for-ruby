@@ -30,8 +30,8 @@ module Azure::Network::Mgmt::V2018_12_01
       # @return [Array<MatchCondition>] List of match conditions
       attr_accessor :match_conditions
 
-      # @return [Action] Type of Actions. Possible values include: 'Allow',
-      # 'Block', 'Log'
+      # @return [WebApplicationFirewallAction] Type of Actions. Possible values
+      # include: 'Allow', 'Block', 'Log'
       attr_accessor :action
 
 

@@ -6,17 +6,52 @@
 module Azure::Network::Mgmt::V2018_12_01
   module Models
     #
-    # Defines values for MatchVariable
+    # Define match variables
     #
-    module MatchVariable
-      RemoteAddr = "RemoteAddr"
-      RequestMethod = "RequestMethod"
-      QueryString = "QueryString"
-      PostArgs = "PostArgs"
-      RequestUri = "RequestUri"
-      RequestHeaders = "RequestHeaders"
-      RequestBody = "RequestBody"
-      RequestCookies = "RequestCookies"
+    class MatchVariable
+
+      include MsRestAzure
+
+      # @return [WebApplicationFirewallMatchVariable] Match Variable. Possible
+      # values include: 'RemoteAddr', 'RequestMethod', 'QueryString',
+      # 'PostArgs', 'RequestUri', 'RequestHeaders', 'RequestBody',
+      # 'RequestCookies'
+      attr_accessor :name
+
+      # @return [String] Describes field of the matchVariable collection
+      attr_accessor :selector
+
+
+      #
+      # Mapper for MatchVariable class as Ruby Hash.
+      # This will be used for serialization/deserialization.
+      #
+      def self.mapper()
+        {
+          required: false,
+          serialized_name: 'MatchVariable',
+          type: {
+            name: 'Composite',
+            class_name: 'MatchVariable',
+            model_properties: {
+              name: {
+                required: true,
+                serialized_name: 'name',
+                type: {
+                  name: 'String'
+                }
+              },
+              selector: {
+                required: false,
+                serialized_name: 'selector',
+                type: {
+                  name: 'String'
+                }
+              }
+            }
+          }
+        }
+      end
     end
   end
 end

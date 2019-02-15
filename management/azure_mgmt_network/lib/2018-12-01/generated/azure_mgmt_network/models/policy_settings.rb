@@ -12,12 +12,14 @@ module Azure::Network::Mgmt::V2018_12_01
 
       include MsRestAzure
 
-      # @return [EnabledState] describes if the policy is in enabled state or
-      # disabled state. Possible values include: 'Disabled', 'Enabled'
+      # @return [WebApplicationFirewallEnabledState] describes if the policy is
+      # in enabled state or disabled state. Possible values include:
+      # 'Disabled', 'Enabled'
       attr_accessor :enabled_state
 
-      # @return [Mode] Describes if it is in detection mode  or prevention mode
-      # at policy level. Possible values include: 'Prevention', 'Detection'
+      # @return [WebApplicationFirewallMode] Describes if it is in detection
+      # mode  or prevention mode at policy level. Possible values include:
+      # 'Prevention', 'Detection'
       attr_accessor :mode
 
 
@@ -28,7 +30,7 @@ module Azure::Network::Mgmt::V2018_12_01
       def self.mapper()
         {
           required: false,
-          serialized_name: 'policySettings',
+          serialized_name: 'PolicySettings',
           type: {
             name: 'Composite',
             class_name: 'PolicySettings',
