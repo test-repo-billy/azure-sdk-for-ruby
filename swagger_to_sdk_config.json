@@ -1,4 +1,5 @@
 {
+  "$schema": "https://openapistoragetest.blob.core.windows.net/sdkautomation/test/schemas/swagger_to_sdk_config.schema.json",
   "meta": {
     "version": "0.2.0",
     "repotag": "azure-sdk-for-ruby",
@@ -10,9 +11,8 @@
       "sdkrel:ruby-sdks-folder": "."
     },
     "advanced_options": {
-      "create_sdk_pull_requests": false,
-      "sdk_generation_pull_request_base": "main_branch",
-      "main_branch": "latest"
+      "create_sdk_pull_requests": true,
+      "sdk_generation_pull_request_base": "main_branch"
     }
   }
 }
